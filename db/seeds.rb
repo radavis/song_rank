@@ -12,7 +12,20 @@ albums = [
   [ 'Tycho', 'Dive' ],
   [ 'Glitch Mob', 'Drink the Sea' ],
   [ 'Superchunk', 'On the Mouth' ],
-  [ 'Rage Against the Machine', 'Rage Against the Machine' ]
+  [ 'Rage Against the Machine', 'Rage Against the Machine' ],
+  [ 'Averkiou', 'Throwing Sparks' ],
+  [ 'Boards of Canada', "Tomorrow's Harvest" ],
+  [ 'Copy', 'Hard Dream' ],
+  [ 'Human Television', 'All Songs Written By' ],
+  [ 'Ringo Deathstarr', 'Ringo Deathstarr' ],
+  [ 'Stone Roses', 'The Complete Stone Roses' ],
+  [ 'Boards of Canada', 'Music Has the Right to Children' ],
+  [ 'Clams Casino', 'Instrumentals' ],
+  [ 'Medicine', 'Shot Forth Self Living' ],
+  [ 'Ride', 'Nowhere' ],
+  [ 'Sugar', 'File Under Easy Listening' ],
+  [ 'Teenage Fanclub', 'Bandwagonesque' ],
+  [ 'The Cure', 'Wish' ]
 ]
 
 albums.each do |artist, album|
