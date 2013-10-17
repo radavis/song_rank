@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20131017030551) do
   end
 
   create_table "ratings", force: true do |t|
-    t.integer  "points"
+    t.integer  "score",      default: 0
     t.integer  "track_id"
     t.datetime "created_at"
     t.datetime "updated_at"
