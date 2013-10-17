@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Artist:</strong>
+  <%= @album.artist.name %>
+</p>
+
+<p>
+  <strong>Album:</strong>
   <%= @album.name %>
 </p>
 
@@ -11,9 +16,25 @@
 </p>
 
 <p>
-  <strong>Artist:</strong>
-  <%= @album.artist_id %>
+  <img src="<%= @album.image %>">
 </p>
+
+<table class="table">
+  <tr>
+    <th>Track Number</th>
+    <th>Track Name</th>
+    <th>Duration</th>
+  </tr>
+
+  <% @album.tracks.each do |t| %>
+    <tr>
+      <td><%= t.number %></td>
+      <td><%= t.name %></td>
+      <td><%= "#{t.duration / 60}:%02d" % (t.duration % 60) %></td>
+    </tr>
+  <% end %>
+</table>
+
 
 <%= link_to 'Edit', edit_album_path(@album) %> |
 <%= link_to 'Back', albums_path %>
