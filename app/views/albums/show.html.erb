@@ -30,7 +30,7 @@
     <tr>
       <td><%= t.number %></td>
       <td><%= t.name %></td>
-      <td><%= t.duration %> seconds</td>
+      <td><%= "#{t.duration / 60}:%02d" % (t.duration % 60) %></td>
     </tr>
   <% end %>
 </table>
