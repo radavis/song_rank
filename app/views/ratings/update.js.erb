@@ -1,11 +1,12 @@
-$('div.rating').raty({
-  score: <%= @rating.score %>,
-  path: '/assets',
-  click: function(score, e) {
-    $.ajax({
-      url: '/ratings/' + <%= @rating.id %>
-      type: 'PATCH',
-      data: { score: score }
-    }).done(function (data {}));
-  }
-});
+
+// $('div.rating').raty({
+//   score: <%= @rating.score %>,
+//   path: '/assets',
+//   click: function(score, e) {
+//     $.ajax({
+//       url: '/ratings/' + <%= @rating.id %>
+//       type: 'PATCH',
+//       data: { score: score }
+//     }).done(function (data){}));
+//   }
+// });

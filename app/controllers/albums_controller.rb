@@ -10,8 +10,9 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
+    @ratings = []
     @album.tracks.each do |t|
-      Rating.find_or_create_by(track_id: t.id)
+      @ratings << Rating.find_or_create_by(track_id: t.id)
     end
   end
 

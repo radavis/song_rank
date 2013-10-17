@@ -12,6 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.raty.min
 //= require bootstrap.min
 //= require_tree .

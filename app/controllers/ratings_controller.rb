@@ -1,11 +1,9 @@
 class RatingsController < ApplicationController
+
   def update
+    #binding.pry
     @rating = Rating.find_by(params[:id])
-    @track = @rating.track
-    if @rating.update_attributes(score: params[:score])
-      respond_to do |format|
-        format.js
-      end
-    end
+    @rating.update_attributes(score: params[:score])
   end
+
 end
