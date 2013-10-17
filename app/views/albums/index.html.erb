@@ -3,9 +3,10 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Release date</th>
       <th>Artist</th>
+      <th>Album</th>
+      <th>Release date</th>
+      <th>Image</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,12 +16,15 @@
   <tbody>
     <% @albums.each do |album| %>
       <tr>
+        <td><%= album.artist.name %></td>
         <td><%= album.name %></td>
-        <td><%= album.release_date %></td>
-        <td><%= album.artist_id %></td>
+        <td><%= album.released %></td>
+        <td><img src="<%= album.image %>"></td>
         <td><%= link_to 'Show', album %></td>
+        <!--
         <td><%= link_to 'Edit', edit_album_path(album) %></td>
         <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        -->
       </tr>
     <% end %>
   </tbody>

@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20131016214435) do
   enable_extension "plpgsql"
 
   create_table "albums", force: true do |t|
-    t.string   "name",         null: false
-    t.date     "release_date"
+    t.string   "name",       null: false
+    t.date     "released"
     t.string   "image"
-    t.string   "artist_id"
+    t.integer  "artist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
