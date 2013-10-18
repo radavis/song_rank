@@ -12,7 +12,7 @@
 
   <tbody>
     <% @albums.sort_by {|a| a.artist.name }.each do |album| %>
-      <tr id="<%= album.id %>">
+      <tr class="album" id="<%= album.id %>">
         <td><img src="<%= album.image %>"></td>
         <td><%= album.artist.name %></td>
         <td><%= album.name %></td>
