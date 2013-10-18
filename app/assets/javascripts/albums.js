@@ -4,10 +4,10 @@ $(document).ready(function() {
     window.location = '/albums/' + $(this).attr('id');
   });
 
-  // update a track's rating
+  // update and display a track's rating
   $('div.rating').raty({
-    score: function() { return $(this).attr('score'); },
     path: "/assets",
+    score: function() { return $(this).attr('score'); },
     click: function(score, e) {
       $.ajax({
         method: "PATCH",
