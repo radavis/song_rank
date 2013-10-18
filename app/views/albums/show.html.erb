@@ -19,11 +19,12 @@
   <img src="<%= @album.image %>">
 </p>
 
-<table class="table">
+<table class="table table-hover">
   <tr>
     <th>Track Number</th>
     <th>Track Name</th>
     <th>Duration</th>
+    <th>Rating</th>
   </tr>
 
   <% @album.tracks.each do |t| %>
@@ -31,6 +32,7 @@
       <td><%= t.number %></td>
       <td><%= t.name %></td>
       <td><%= "#{t.duration / 60}:%02d" % (t.duration % 60) %></td>
+      <td><div class="rating" id="<%= t.ratings.first.id %>" score="<%= t.ratings.first.score %>"></div></td>
     </tr>
   <% end %>
 </table>
