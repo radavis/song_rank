@@ -32,7 +32,7 @@
       <td><%= t.number %></td>
       <td><%= t.name %></td>
       <td><%= "#{t.duration / 60}:%02d" % (t.duration % 60) %></td>
-      <td><div class="rating" id="<%= t.ratings.first.id %>"></div></td>
+      <td><div class="rating" id="<%= t.ratings.first.id %>" score="<%= t.ratings.first.score %>"></div></td>
     </tr>
   <% end %>
 </table>
@@ -43,6 +43,6 @@
 
 <script>
   <% @album.tracks.each do |t| %>
-    $('div.rating#<%= t.ratings.first.id %>').raty({ score: <%= t.ratings.first.score %> });
+    $('div.rating#<%= t.ratings.first.id %>').raty('set', { score: <%= t.ratings.first.score %> });
   <% end %>
 </script>
