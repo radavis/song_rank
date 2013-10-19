@@ -12,7 +12,7 @@ $(document).ready(function() {
       $.ajax({
         method: "PATCH",
         url: '/ratings/' + $(this).attr('id'),
-        data: { id: $(this).attr('id'), score: score }
+        data: { score: score }
       });
     }
   });
