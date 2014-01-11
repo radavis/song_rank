@@ -30,6 +30,7 @@ albums = [
 
 albums.each do |artist, album|
   lastfm = LastFM::Album.get_info(artist, album)
+  binding.pry
 
   artist = Artist.find_or_create_by(name: lastfm.artist)
 

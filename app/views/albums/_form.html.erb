@@ -1,29 +1,35 @@
-<%= form_for(@album) do |f| %>
-  <% if @album.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
+<%= form_for(@album, html: { role: 'form' }) do |f| %>
 
-      <ul>
-      <% @album.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <legend><%= @album.name %></legend>
+
+  <% if @album.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+        &times;
+      </button>
+
+      <%= pluralize(@album.errors.count, "error") %>
+      prohibited this album from being saved:
+      <strong>
+      <%= @album.errors.full_messages.join(", ") %>
+      </strong>
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :released %><br>
-    <%= f.date_select :released %>
+    <%= f.date_select :released, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :artist_id %><br>
-    <%= f.text_field :artist_id %>
+    <%= f.text_field :artist_id, class: 'form-control' %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions form-group">
+    <%= f.submit 'Submit', class: 'btn btn-success' %>
   </div>
+
 <% end %>

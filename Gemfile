@@ -62,4 +62,4 @@ group :test, :development do
   gem 'valid_attribute'
 end
 
-gem 'radavis_last_fm'
+gem 'radavis_last_fm', git: "git://github.com/radavis/last_fm.git"
