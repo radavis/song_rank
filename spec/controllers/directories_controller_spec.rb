@@ -23,7 +23,7 @@ describe DirectoriesController do
   # This should return the minimal set of attributes required to create a valid
   # Directory. As you add validations to Directory, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "name" => "MyString" } }
+  let(:valid_attributes) { { "full_path" => "MyString" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -85,14 +85,14 @@ describe DirectoriesController do
       it "assigns a newly created but unsaved directory as @directory" do
         # Trigger the behavior that occurs when invalid params are submitted
         Directory.any_instance.stub(:save).and_return(false)
-        post :create, {:directory => { "name" => "invalid value" }}, valid_session
+        post :create, {:directory => { "full_path" => "invalid value" }}, valid_session
         assigns(:directory).should be_a_new(Directory)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Directory.any_instance.stub(:save).and_return(false)
-        post :create, {:directory => { "name" => "invalid value" }}, valid_session
+        post :create, {:directory => { "full_path" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -106,8 +106,8 @@ describe DirectoriesController do
         # specifies that the Directory created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Directory.any_instance.should_receive(:update).with({ "name" => "MyString" })
-        put :update, {:id => directory.to_param, :directory => { "name" => "MyString" }}, valid_session
+        Directory.any_instance.should_receive(:update).with({ "full_path" => "MyString" })
+        put :update, {:id => directory.to_param, :directory => { "full_path" => "MyString" }}, valid_session
       end
 
       it "assigns the requested directory as @directory" do
@@ -128,7 +128,7 @@ describe DirectoriesController do
         directory = Directory.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Directory.any_instance.stub(:save).and_return(false)
-        put :update, {:id => directory.to_param, :directory => { "name" => "invalid value" }}, valid_session
+        put :update, {:id => directory.to_param, :directory => { "full_path" => "invalid value" }}, valid_session
         assigns(:directory).should eq(directory)
       end
 
@@ -136,7 +136,7 @@ describe DirectoriesController do
         directory = Directory.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Directory.any_instance.stub(:save).and_return(false)
-        put :update, {:id => directory.to_param, :directory => { "name" => "invalid value" }}, valid_session
+        put :update, {:id => directory.to_param, :directory => { "full_path" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end
