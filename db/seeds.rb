@@ -1,5 +1,11 @@
 require 'last_fm'
 
+filetypes = [ 'aac', 'flac', 'm4a', 'mp3', 'ogg', 'raw', 'wav', 'wma' ]
+
+filetypes.each do |ext|
+  filetype = Filetype.find_or_create_by(name: ext)
+end
+
 LastFM.api_key = ENV['lastfm_api_key']
 
 albums = [
@@ -30,7 +36,6 @@ albums = [
 
 albums.each do |artist, album|
   lastfm = LastFM::Album.get_info(artist, album)
-  binding.pry
 
   artist = Artist.find_or_create_by(name: lastfm.artist)
 
